@@ -50,7 +50,7 @@ Book(std::string title, std::string author, int pageCount, bool digital = false)
       @return : the title of the Book
    */
 
-const std::string getTitle(); //getter
+const std::string getTitle() const; //getter
 
 
   /**
@@ -59,20 +59,20 @@ const std::string getTitle(); //getter
   */
 
 
-const void setTitle(std::string title);//setter
+void setTitle(const std::string & title);//setter
 
    /**
        @return : the author of the Book
     */
 
-const std::string getAuthor(); //getter
+const std::string getAuthor() const; //getter
 
    /**
      @param  : the name of the author of the Book
      @post   : sets the Book's author to the value of the parameter
    */
 
-const void setAuthor(std::string author); //setter
+void setAuthor(const std::string & author); //setter
 
    /**
      @param  : a positive integer page count
@@ -80,20 +80,21 @@ const void setAuthor(std::string author); //setter
      @post   : sets the page count to the value of the parameter
    */
 
-const void setPageCount(int pageCount); //setter
+void setPageCount(const int & pageCount); //setter
 
 
    /**
        @return : the page count
     */
 
-const int getPageCount(); //getter
+ 
+const int getPageCount() const; //getter
 
    /**
     @post   : sets the digital flag to true
    */
 
-const void setDigital(); //setter
+void setDigital(); //setter
 
   /**
    @return true if the book is available in digital form, false otherwise

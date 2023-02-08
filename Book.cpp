@@ -5,8 +5,6 @@
 //functionality. 
 
 #include "Book.hpp"
-#include <iostream>
-#include <string> 
 
   /**
       Default constructor.
@@ -14,9 +12,9 @@
    */
 
 Book::Book() {
-    title_="";
-    author_="";
-    page_count_=0;
+    title_= "";
+    author_= "";
+    page_count_= 0;
     digital_ = false;
 }
 
@@ -43,7 +41,7 @@ Book::Book(std::string title, std::string author, int pageCount, bool digital) {
   */
 
 
-const void Book::setTitle(std::string title)  {
+void Book::setTitle(const std::string & title)  {
     title_ = title;
 }
 
@@ -51,7 +49,7 @@ const void Book::setTitle(std::string title)  {
       @return : the title of the Book
    */
 
-const std::string Book::getTitle(){ //getting so no parameter
+const std::string Book::getTitle() const{ //getting so no parameter
     return title_; 
 }
 
@@ -60,7 +58,7 @@ const std::string Book::getTitle(){ //getting so no parameter
      @post   : sets the Book's author to the value of the parameter
    */
 
-const void Book::setAuthor(std::string author) {
+void Book::setAuthor(const std::string & author) {
      author_ = author;
 }
 
@@ -68,7 +66,7 @@ const void Book::setAuthor(std::string author) {
        @return : the author of the Book
     */
 
-const std::string Book::getAuthor(){
+const std::string Book::getAuthor() const{
     return author_;
 }
 
@@ -78,7 +76,7 @@ const std::string Book::getAuthor(){
      @post   : sets the page count to the value of the parameter
    */
  
-const void Book::setPageCount(int pageCount) { 
+void Book::setPageCount(const int & pageCount) { 
     if (pageCount > 0) {
     page_count_= pageCount;
     }
@@ -88,7 +86,7 @@ const void Book::setPageCount(int pageCount) {
        @return : the page count
     */
 
-const int Book::getPageCount() {
+const int Book::getPageCount() const{
     return page_count_;
 }
 
@@ -96,7 +94,8 @@ const int Book::getPageCount() {
    /**
     @post   : sets the digital flag to true
    */
-const void Book::setDigital() {
+
+void Book::setDigital() {
     digital_= true;
 }
 
@@ -106,7 +105,7 @@ const void Book::setDigital() {
    Note: this is an accessor function and must follow the same convention as all accessor functions even if it is not called getDigital
   */
 
- bool Book::isDigital()const {
+ bool Book::isDigital() const {
     if (digital_ == true){
         return true;
         }
