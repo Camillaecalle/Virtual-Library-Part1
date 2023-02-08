@@ -1,57 +1,61 @@
+//Camilla Calle
+//Febuary 6, 2023
+//Book.cpp is the implementation. Here I gave the functions (that I have in my interface file) 
+//functionality. 
+
 #include "Book.hpp"
 #include <iostream>
 #include <string> 
 
 //Default Constructor
-Book::Book() {
-    title_ = "";
-    author_ = "";
-    pageCount_= 0;
-    digital_= false;
+Book::Book() {   
+}
+//Parameterized constructor
+Book::Book(std::string title, std::string author, int pageCount, bool digital) {
+    title_= title;
+    author_= author;
+    pageCount_= pageCount;
+    digital_= digital;
 }
 
-std::string Book::getTitle() const{ //getting so no parameter
+const std::string Book::getTitle(){ //getting so no parameter
     return title_; 
 }
 
-void Book::setTitle(std::string nameTitle) {
-    title_= nameTitle;
+const void Book::setTitle(std::string title)  {
+    title_ = title;
 }
 
-std::string Book::getAuthor() const{
+const std::string Book::getAuthor(){
     return author_;
 }
 
-void Book::setAuthor(std::string nameAuthor) {
-     author_= nameAuthor;
+const void Book::setAuthor(std::string author) {
+     author_ = author;
 }
 
-void Book::setPageCount(int pageCount) {
-    if (pageCount > 0) 
-    {
-    pageCount_=pageCount;
+//setter for page count. (Mutator)
+//page count > 0
+//set page count to the value of the parameter. 
+const void Book::setPageCount(int pageCount) { 
+    if (pageCount > 0) {
+    pageCount_= pageCount;
     }
 }
 
-int::Book::getPageCount() const {
+const int Book::getPageCount() {
     return pageCount_;
 }
 
-void Book::setDigital (bool digitalFlag){
-    digital_=true;
+// return true if the book is available in digital form, false ortherwise.
+// Accessor Function but written as isDigital NOT getDigital.
+ bool Book::isDigital()const {
+    if (digital_ == true){
+        return true;
+        }
+    return false;
+ }
+
+const void Book::setDigital() {
+    digital_= true;
 }
-
-// bool Book::isDigital () const {
-//     if (){
-
-//         return true;
-//     }
-// }
-
-
-//   /**
-//    @return true if the book is available in digital form, false otherwise
-
-//    Note: this is an accessor function and must follow the same convention as all accessor functions even if it is not called getDigital
-//   */
-//   isDigital
