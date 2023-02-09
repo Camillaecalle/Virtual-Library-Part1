@@ -6,8 +6,6 @@
 
 #ifndef BOOK_HPP
 #define BOOK_HPP
-
-#include <iostream>
 #include <string>
 
 /*
@@ -19,7 +17,7 @@ private:
   - A flag indicating whether the book is available in digital form (a Boolean) */
 
 class Book { 
-private: 
+private:
 std::string title_;
 std::string author_; 
 int page_count_;
@@ -47,6 +45,7 @@ Book();
 Book(std::string title, std::string author, int pageCount, bool digital = false);
 
   /**
+   getTitle
       @return : the title of the Book
    */
 
@@ -54,6 +53,7 @@ const std::string getTitle() const; //getter
 
 
   /**
+   * setTitle
     @param  : the title of the Book
     @post   : sets the Book's title to the value of the parameter
   */
@@ -62,12 +62,14 @@ const std::string getTitle() const; //getter
 void setTitle(const std::string & title);//setter
 
    /**
+    getAuthor
        @return : the author of the Book
     */
 
 const std::string getAuthor() const; //getter
 
    /**
+    setAuthor
      @param  : the name of the author of the Book
      @post   : sets the Book's author to the value of the parameter
    */
@@ -75,6 +77,7 @@ const std::string getAuthor() const; //getter
 void setAuthor(const std::string & author); //setter
 
    /**
+    setPageCount
      @param  : a positive integer page count
      @pre    : page count > 0 - books cannot have a negative number of pages
      @post   : sets the page count to the value of the parameter
@@ -84,6 +87,7 @@ void setPageCount(const int & pageCount); //setter
 
 
    /**
+    getPageCount
        @return : the page count
     */
 
@@ -91,12 +95,14 @@ void setPageCount(const int & pageCount); //setter
 const int getPageCount() const; //getter
 
    /**
+    setDigital
     @post   : sets the digital flag to true
    */
 
 void setDigital(); //setter
 
   /**
+   isDigital
    @return true if the book is available in digital form, false otherwise
 
    Note: this is an accessor function and must follow the same convention as all accessor functions even if it is not called getDigital
